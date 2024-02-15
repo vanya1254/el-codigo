@@ -1,0 +1,31 @@
+@import "../../scss/variables";
+@import "../../scss/animations";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 53px;
+
+    &_img {
+      animation: wiggle 2s linear infinite both;
+    }
+
+    &_title {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 125%;
+      text-transform: uppercase;
+      text-align: center;
+      color: #ffbf1a;
+    }
+  }
+}

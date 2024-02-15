@@ -1,0 +1,77 @@
+@keyframes wiggle {
+  0%,
+  100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  16% {
+    -webkit-transform: translate(-10px, 0);
+    transform: translate(-10px, 0);
+  }
+  32% {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+  }
+  49% {
+    -webkit-transform: translate(0, 10px);
+    transform: translate(0, 10px);
+  }
+  68% {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+  }
+  84% {
+    -webkit-transform: translate(10px, 0);
+    transform: translate(10px, 0);
+  }
+}
+
+@keyframes click {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
+  50% {
+    -webkit-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
+  75% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bubble {
+  0%,
+  100% {
+  }
+  25% {
+  }
+  50% {
+    width: 147px;
+    height: 147px;
+  }
+  75% {
+    width: 147px;
+    height: 147px;
+  }
+}
+
+@keyframes linesClick {
+  0%,
+  100% {
+  }
+  25% {
+  }
+  50% {
+    width: 71px;
+    height: 62px;
+  }
+  75% {
+  }
+}

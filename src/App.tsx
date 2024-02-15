@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import { AppContext } from "./context";
+
+import { Background, GameBlock } from "./components";
+
+import "./App.css";
+
+const App: React.FC = () => {
+  const [isDay, setIsDay] = useState(true);
+  const [isStartEnd, setIsStartEnd] = useState(true);
+  const [startIsClicked, setStartIsClicked] = useState(false);
+  const [okIsClicked, setOkIsClicked] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider
+      value={{
+        isDay,
+        isStartEnd,
+        startIsClicked,
+        okIsClicked,
+        setIsDay,
+        setIsStartEnd,
+        setStartIsClicked,
+        setOkIsClicked,
+      }}
+    >
+      <div className="App">
+        <Background />
+        <GameBlock />
+      </div>
+    </AppContext.Provider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,71 @@
+@import "../../scss/variables";
+@import "../../scss/animations";
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  height: 100%;
+  padding: 29px;
+  padding-bottom: 40px;
+
+  background-image: url("../../assets/img/hintBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__animation {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+
+    &_ship {
+    }
+
+    &_hand {
+      animation: click 2s linear infinite both;
+    }
+
+    &::before {
+      position: absolute;
+      top: -10px;
+
+      content: "";
+
+      background-image: url("../../assets/img/bubble.png");
+
+      animation: bubble 2s ease-out infinite both;
+    }
+
+    &::after {
+      position: absolute;
+      top: 70px;
+      left: 10px;
+
+      content: "";
+
+      background-image: url("../../assets/img/handLinesClick.png");
+
+      animation: linesClick 2s ease-out infinite both;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 66px;
+
+    &_text {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 167%;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
