@@ -1,0 +1,47 @@
+@import "../../scss/animations";
+@import "../../scss/variables";
+
+.root {
+  position: absolute;
+  width: 148px;
+  height: 148px;
+  left: -$widthShip;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  cursor: pointer;
+
+  @for $i from 1 through $iterationAnimationFly {
+    &_#{$i} {
+      animation: shipFly-#{$i} 10s linear normal forwards;
+      // animation: shipFly-#{$i} 2s linear #{$i}s normal forwards; random($limit: 1) + s
+    }
+  }
+}
+
+.kill {
+  animation: shipKill 1s linear normal forwards;
+}
+
+.goodKill {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 148px;
+    height: 148px;
+    background-color: transparent;
+    background-image: url("../../assets/img/bubble.png");
+  }
+}
+
+.badKill {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 148px;
+    height: 148px;
+    background-color: transparent;
+    background-image: url("../../assets/img/bubbleFault.png");
+  }
+}

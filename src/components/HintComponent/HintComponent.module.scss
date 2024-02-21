@@ -7,9 +7,11 @@
   justify-content: space-between;
   flex-direction: column;
 
-  height: 100%;
+  height: calc(100% - 66px);
   padding: 29px;
   padding-bottom: 40px;
+  margin: 20px 40px;
+  margin-bottom: 46px;
 
   background-image: url("../../assets/img/hintBg.jpg");
   background-size: cover;
@@ -21,34 +23,18 @@
     position: relative;
     flex-direction: column;
 
-    &_ship {
+    &_shipHandYellow {
+      background-image: url("../../assets//img/animationYellow1-5.png");
+      width: 147px;
+      height: 284px;
+      animation: bubbleClickYellow 1s infinite;
     }
 
-    &_hand {
-      animation: click 2s linear infinite both;
-    }
-
-    &::before {
-      position: absolute;
-      top: -10px;
-
-      content: "";
-
-      background-image: url("../../assets/img/bubble.png");
-
-      animation: bubble 2s ease-out infinite both;
-    }
-
-    &::after {
-      position: absolute;
-      top: 70px;
-      left: 10px;
-
-      content: "";
-
-      background-image: url("../../assets/img/handLinesClick.png");
-
-      animation: linesClick 2s ease-out infinite both;
+    &_shipHandGreen {
+      background-image: url("../../assets//img/animationGreen1-5.png");
+      width: 147px;
+      height: 284px;
+      animation: bubbleClickGreen 1s infinite;
     }
   }
 

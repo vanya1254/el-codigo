@@ -34,3 +34,8 @@ code {
   -o-user-select: text;
   user-select: text;
 }
+
+:root {
+  --animation-time: 2s;
+  --animation-1st-pos: 0;
+}

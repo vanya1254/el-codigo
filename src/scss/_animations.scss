@@ -1,3 +1,5 @@
+@import "./variables";
+
 @keyframes wiggle {
   0%,
   100% {
@@ -26,52 +28,74 @@
   }
 }
 
-@keyframes click {
+@keyframes bubbleClickGreen {
   0%,
   100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    background-image: url("../assets/img/animationGreen1-5.png");
   }
   25% {
-    -webkit-transform: translateY(-25px);
-    transform: translateY(-25px);
+    background-image: url("../assets/img/animationGreen2.png");
   }
   50% {
-    -webkit-transform: translateY(-25px);
-    transform: translateY(-25px);
+    background-image: url("../assets/img/animationGreen3.png");
   }
   75% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    background-image: url("../assets/img/animationGreen4.png");
   }
 }
 
-@keyframes bubble {
+@keyframes bubbleClickYellow {
   0%,
   100% {
+    background-image: url("../assets/img/animationYellow1-5.png");
   }
   25% {
+    background-image: url("../assets/img/animationYellow2.png");
   }
   50% {
-    width: 147px;
-    height: 147px;
+    background-image: url("../assets/img/animationYellow3.png");
   }
   75% {
-    width: 147px;
-    height: 147px;
+    background-image: url("../assets/img/animationYellow4.png");
   }
 }
 
-@keyframes linesClick {
-  0%,
-  100% {
+@for $i from 1 through $iterationAnimationFly {
+  @keyframes shipFly-#{$i} {
+    0% {
+      left: -$widthShip;
+      top: random(90) / 100 * 100%;
+    }
+    50% {
+      left: random(90) / 100 * 100%;
+      top: random(90) / 100 * 100%;
+    }
+    100% {
+      left: 100%;
+      top: random(90) / 100 * 100%;
+      display: none;
+    }
+  }
+}
+
+@keyframes shipKill {
+  0% {
   }
   25% {
+    -webkit-transform: translateY(-12.5vh) translateX(10%);
+    transform: translateY(-12.5vh) translateX(10%);
   }
   50% {
-    width: 71px;
-    height: 62px;
+    -webkit-transform: translateY(-25vh) translateX(-10%);
+    transform: translateY(-25vh) translateX(-10%);
   }
   75% {
+    -webkit-transform: translateY(-37.5vh) translateX(10%);
+    transform: translateY(-37.5vh) translateX(10%);
+  }
+  100% {
+    -webkit-transform: translateY(-50vh) translateX(-10%);
+    transform: translateY(-50vh) translateX(-10%);
+    display: none;
   }
 }

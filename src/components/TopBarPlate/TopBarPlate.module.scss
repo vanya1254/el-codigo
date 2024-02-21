@@ -1,0 +1,26 @@
+@import "../../scss/variables";
+
+.root {
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  gap: 11px;
+
+  background-image: url("../../assets/img/counterBlock.png");
+  width: 147px;
+  height: 47px;
+
+  &_ship {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__count {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #000;
+  }
+}
