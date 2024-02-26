@@ -1,0 +1,26 @@
+@import "./variables";
+
+@mixin speech-balloon-text {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 133%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+}
+
+@mixin speech-balloon-position {
+  position: absolute;
+  content: attr(data-content);
+  top: 100%;
+  left: 30%;
+  background-color: transparent;
+}
+
+@mixin speech-balloon-text-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}

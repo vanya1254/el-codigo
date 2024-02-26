@@ -64,21 +64,21 @@
   @keyframes shipFly-#{$i} {
     0% {
       left: -$widthShip;
-      top: random(90) / 100 * 100%;
+      top: random(60) / 100 * 100%;
     }
     50% {
-      left: random(90) / 100 * 100%;
-      top: random(90) / 100 * 100%;
+      left: random(60) / 100 * 100%;
+      top: random(60) / 100 * 100%;
     }
     100% {
       left: 100%;
-      top: random(90) / 100 * 100%;
+      top: random(60) / 100 * 100%;
       display: none;
     }
   }
 }
 
-@keyframes shipKill {
+@keyframes shipTap {
   0% {
   }
   25% {
@@ -92,10 +92,12 @@
   75% {
     -webkit-transform: translateY(-37.5vh) translateX(10%);
     transform: translateY(-37.5vh) translateX(10%);
+    opacity: 0.4;
   }
   100% {
     -webkit-transform: translateY(-50vh) translateX(-10%);
     transform: translateY(-50vh) translateX(-10%);
+    opacity: 0;
     display: none;
   }
 }

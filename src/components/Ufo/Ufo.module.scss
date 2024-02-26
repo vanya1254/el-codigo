@@ -1,5 +1,6 @@
 @import "../../scss/animations";
 @import "../../scss/variables";
+@import "../../scss/mixins";
 
 .root {
   position: absolute;
@@ -18,16 +19,51 @@
       // animation: shipFly-#{$i} 2s linear #{$i}s normal forwards; random($limit: 1) + s
     }
   }
+
+  &::after {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
-.kill {
-  animation: shipKill 1s linear normal forwards;
+.bigPhrase {
+  &::after {
+    @include speech-balloon-text;
+    @include speech-balloon-position;
+    @include speech-balloon-text-position;
+
+    width: 165px;
+    height: 130px;
+    background-image: url("../../assets/img/textBox2_2.png");
+  }
 }
 
-.goodKill {
+.smallPhrase {
+  &::after {
+    @include speech-balloon-text;
+    @include speech-balloon-position;
+    @include speech-balloon-text-position;
+
+    width: 217px;
+    height: 87px;
+    background-image: url("../../assets/img/textBox1_2.png");
+  }
+}
+
+.tap {
+  animation: shipTap 1s linear normal forwards;
+}
+
+.goodTap {
   &::after {
     position: absolute;
     content: "";
+    top: 0;
+    left: 0;
     width: 148px;
     height: 148px;
     background-color: transparent;
@@ -35,10 +71,12 @@
   }
 }
 
-.badKill {
+.badTap {
   &::after {
     position: absolute;
     content: "";
+    top: 0;
+    left: 0;
     width: 148px;
     height: 148px;
     background-color: transparent;

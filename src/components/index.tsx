@@ -11,3 +11,4 @@ export { TopBar } from "./TopBar";
 export { Game } from "./Game";
 export { GameBlock } from "./GameBlock";
 export { Ufo } from "./Ufo";
+export { Result } from "./Result";

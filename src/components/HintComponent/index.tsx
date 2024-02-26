@@ -28,7 +28,7 @@ export const HintComponent: React.FC = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} selectDisabled`}>
       <div className={styles.root__animation}>
         <div
           className={

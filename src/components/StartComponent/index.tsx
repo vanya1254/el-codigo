@@ -17,7 +17,7 @@ export const StartComponent: React.FC = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} selectDisabled`}>
       <section className={styles.root__heading}>
         <img
           className={styles.root__heading_img}

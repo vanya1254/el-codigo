@@ -12,6 +12,7 @@ export type TopBarPlateType = {
   sencation: string;
   firstValue: string;
   secondValue: string;
+  // TODO: criticalValue: boolean;
 };
 
 export const TopBarPlate: React.FC<TopBarPlateType> = ({
