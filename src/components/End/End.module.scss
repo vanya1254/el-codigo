@@ -1,0 +1,26 @@
+@import "../../scss/variables";
+
+.root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  gap: 104px;
+
+  font-family: $font-family;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+
+  &_title {
+    font-size: 48px;
+    line-height: 10%;
+  }
+
+  &_text {
+    font-size: 18px;
+    line-height: 178%;
+  }
+}

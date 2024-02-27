@@ -6,7 +6,7 @@
   position: absolute;
   width: 148px;
   height: 148px;
-  left: -$widthShip;
+  left: -$widthShip - 152px;
 
   background-repeat: no-repeat;
   background-position: center;
@@ -15,7 +15,7 @@
 
   @for $i from 1 through $iterationAnimationFly {
     &_#{$i} {
-      animation: shipFly-#{$i} 10s linear normal forwards;
+      animation: shipFly-#{$i} 2s linear normal forwards;
       // animation: shipFly-#{$i} 2s linear #{$i}s normal forwards; random($limit: 1) + s
     }
   }

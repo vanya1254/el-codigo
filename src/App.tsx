@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [okIsClicked, setOkIsClicked] = useState(false);
   const [goIsClicked, setGoIsClicked] = useState(false);
   const [isTimeOver, setIsTimeOver] = useState(false);
+  const [isEnd, setIsEnd] = useState(false);
 
   return (
     <AppContext.Provider
@@ -25,6 +26,7 @@ const App: React.FC = () => {
         // timer,
         // counter,
         isTimeOver,
+        isEnd,
         setIsDay,
         setIsStartEnd,
         setStartIsClicked,
@@ -33,6 +35,7 @@ const App: React.FC = () => {
         // setTimer,
         // setCounter,
         setIsTimeOver,
+        setIsEnd,
       }}
     >
       <div className="App">

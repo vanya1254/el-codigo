@@ -3,12 +3,15 @@
  */
 
 export { ElButton } from "./ElButton";
-export { Background } from "./Background";
-export { StartComponent } from "./StartComponent";
-export { HintComponent } from "./HintComponent";
 export { TopBarPlate } from "./TopBarPlate";
-export { TopBar } from "./TopBar";
-export { Game } from "./Game";
-export { GameBlock } from "./GameBlock";
 export { Ufo } from "./Ufo";
-export { Result } from "./Result";
+
+export { Background } from "./Background";
+export { StartScreen } from "./StartScreen";
+export { HintScreen } from "./HintScreen";
+export { Game } from "./Game";
+export { ResultScreen } from "./ResultScreen";
+
+export { TopBar } from "./TopBar";
+export { GameBlock } from "./GameBlock";
+export { End } from "./End";

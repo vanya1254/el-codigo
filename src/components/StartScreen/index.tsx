@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 
 import { AppContext } from "../../context";
 
-import { ElButton } from "../";
+import { ElButton } from "..";
 
 import shipGreenBubbleImg from "../../assets/img/shipGreen-case.png";
 
-import styles from "./StartComponent.module.scss";
+import styles from "./StartScreen.module.scss";
 
-export const StartComponent: React.FC = () => {
+export const StartScreen: React.FC = () => {
   const { setStartIsClicked, setIsDay, setIsStartEnd } = useContext(AppContext);
 
   const onClickStart = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import { getRandomNumber, randomChoice } from "../../utils";
+
 import ufo1 from "../../assets/img/shipBeige_manned.png";
 import ufo2 from "../../assets/img/shipBlue_manned.png";
 import ufo3 from "../../assets/img/shipGreen_manned.png";
 import ufo4 from "../../assets/img/shipPink_manned.png";
 import ufo5 from "../../assets/img/shipYellow_manned.png";
-
-import { getRandomNumber, randomChoice } from "../../utils";
 
 import styles from "./Ufo.module.scss";
 
@@ -15,9 +15,9 @@ export enum TypeUfo {
   BAD = "bad",
 }
 
-export type UfoProps = {
-  type: TypeUfo;
-};
+// export type UfoProps = {
+//   type: TypeUfo;
+// };
 
 export type UfoType = {
   type: TypeUfo;
@@ -51,7 +51,12 @@ export const badPhrases = [
 
 export const imgUfos = [ufo1, ufo2, ufo3, ufo4, ufo5];
 
-export const Ufo: React.FC = () => {
+export type UfoProps = {
+  delay: number;
+  setScore: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export const Ufo: React.FC<UfoProps> = ({ delay, setScore }) => {
   const [isCaught, setIsCaught] = useState(false);
   const ufoRef = useRef<HTMLDivElement | null>(null);
 
@@ -64,21 +69,30 @@ export const Ufo: React.FC = () => {
       : randomChoice(badPhrases);
 
   const onClickUfo = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (ufoRef.current !== null) {
+    if (ufoRef.current !== null && !isCaught) {
       ufoRef.current.style.top = `${e.currentTarget.offsetTop}px`;
       ufoRef.current.style.left = `${e.currentTarget.offsetLeft}px`;
       ufoRef.current.classList.add(styles.tap);
+      ufoRef.current.style.animationDelay = "0s";
 
       if (rndType === TypeUfo.GOOD) {
+        setScore((prev) => prev - 1);
+
         ufoRef.current.classList.add(styles.goodTap);
       } else {
+        setScore((prev) => prev + 1);
+
         ufoRef.current.classList.add(styles.badTap);
       }
+
+      setIsCaught(true);
     }
   };
 
   useEffect(() => {
     if (ufoRef.current) {
+      ufoRef.current.style.animationDelay = `${delay}s`;
+
       ufoRef.current.style.backgroundImage = `url('${rndImg}')`;
       ufoRef.current.classList.add(
         styles[`${rndPhrase.length > 29 ? "bigPhrase" : "smallPhrase"}`]

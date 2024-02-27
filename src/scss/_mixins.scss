@@ -24,3 +24,20 @@
   justify-content: center;
   padding-top: 1rem;
 }
+
+@mixin hint-result-screen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  height: calc(100% - 66px);
+  padding: 29px;
+  padding-bottom: 40px;
+  margin: 20px 40px;
+  margin-bottom: 46px;
+
+  background-image: url("../assets/img/hintBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

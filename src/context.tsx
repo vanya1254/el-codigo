@@ -10,6 +10,7 @@ export interface IAppContext {
   // timer: TopBarPlateType;
   // counter: TopBarPlateType;
   isTimeOver: boolean;
+  isEnd: boolean;
   setIsDay: React.Dispatch<React.SetStateAction<boolean>>;
   setIsStartEnd: React.Dispatch<React.SetStateAction<boolean>>;
   setStartIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,6 +19,7 @@ export interface IAppContext {
   // setTimer: React.Dispatch<React.SetStateAction<TopBarPlateType>>;
   // setCounter: React.Dispatch<React.SetStateAction<TopBarPlateType>>;
   setIsTimeOver: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsEnd: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const defaultState = {
@@ -39,6 +41,7 @@ const defaultState = {
   //   secondValue: "",
   // },
   isTimeOver: false,
+  isEnd: false,
   setIsDay: () => {},
   setIsStartEnd: () => {},
   setStartIsClicked: () => {},
@@ -47,6 +50,7 @@ const defaultState = {
   // setTimer: () => {},
   // setCounter: () => {},
   setIsTimeOver: () => {},
+  setIsEnd: () => {},
 };
 
 export const AppContext = React.createContext<IAppContext>(defaultState);

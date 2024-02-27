@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 
 import { AppContext } from "../../context";
 
-import { ElButton } from "../";
+import { ElButton } from "..";
 
-import styles from "./HintComponent.module.scss";
+import styles from "./HintScreen.module.scss";
 
-export const HintComponent: React.FC = () => {
+export const HintScreen: React.FC = () => {
   const { okIsClicked, setOkIsClicked, setGoIsClicked } =
     useContext(AppContext);
 

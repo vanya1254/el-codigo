@@ -2,21 +2,27 @@ import React, { useContext, useEffect, useState } from "react";
 
 import { TopBarPlate } from "../";
 
-import shipImg from "../../assets/img/shipGreen_manned.png";
-import timerImg from "../../assets/img/timer.png";
-
-import styles from "./TopBar.module.scss";
 import { AppContext } from "../../context";
 
-export const TopBar: React.FC = () => {
+import timerImg from "../../assets/img/timer.png";
+import shipImg from "../../assets/img/shipGreen_manned.png";
+
+import styles from "./TopBar.module.scss";
+
+export type TopBarProps = {
+  score: number;
+};
+
+export const TopBar: React.FC<TopBarProps> = ({ score }) => {
   const { setIsStartEnd, setIsTimeOver, isTimeOver } = useContext(AppContext);
 
   const [timer, setTimer] = useState({
     img: timerImg,
     sencation: ":",
     firstValue: "00",
-    secondValue: "3",
+    secondValue: "30",
   });
+
   const [counter, setCounter] = useState({
     img: shipImg,
     sencation: "/",
@@ -28,8 +34,9 @@ export const TopBar: React.FC = () => {
     if (!isTimeOver) {
       const time = setInterval(() => {
         if (Number(timer.secondValue) == 0) {
-          setIsTimeOver((prev) => !prev);
-          setIsStartEnd((prev) => !prev);
+          setIsTimeOver(true);
+          setIsStartEnd(true);
+
           return () => clearInterval(time);
         } else if (Number(timer.secondValue) <= 10) {
           setTimer((prev) => {
@@ -57,6 +64,28 @@ export const TopBar: React.FC = () => {
       };
     }
   }, [timer]);
+
+  useEffect(() => {
+    if (score >= 10 || score < 0) {
+      setCounter((prev) => {
+        return {
+          img: prev.img,
+          sencation: prev.sencation,
+          firstValue: `${score}`,
+          secondValue: prev.secondValue,
+        };
+      });
+    } else {
+      setCounter((prev) => {
+        return {
+          img: prev.img,
+          sencation: prev.sencation,
+          firstValue: `0${score}`,
+          secondValue: prev.secondValue,
+        };
+      });
+    }
+  }, [score]);
 
   return (
     <div className={`${styles.root} selectDisabled`}>
