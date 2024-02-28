@@ -20,7 +20,7 @@ export const TopBar: React.FC<TopBarProps> = ({ score }) => {
     img: timerImg,
     sencation: ":",
     firstValue: "00",
-    secondValue: "30",
+    secondValue: "25",
   });
 
   const [counter, setCounter] = useState({
