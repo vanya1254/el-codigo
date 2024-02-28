@@ -15,10 +15,6 @@ export enum TypeUfo {
   BAD = "bad",
 }
 
-// export type UfoProps = {
-//   type: TypeUfo;
-// };
-
 export type UfoType = {
   type: TypeUfo;
   phrase: string;
@@ -76,7 +72,7 @@ export const Ufo: React.FC<UfoProps> = ({ delay, setScore }) => {
       ufoRef.current.style.animationDelay = "0s";
 
       if (rndType === TypeUfo.GOOD) {
-        setScore((prev) => prev - 1);
+        setScore((prev) => (prev < 1 ? prev : prev - 1));
 
         ufoRef.current.classList.add(styles.goodTap);
       } else {

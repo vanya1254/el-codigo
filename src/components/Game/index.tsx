@@ -15,7 +15,6 @@ export type GameProps = {
 
 export const Game: React.FC<GameProps> = ({ score, setScore }) => {
   const { isTimeOver } = useContext(AppContext);
-  // const arrUfoDelays = [0.5, 0.9, 3.5, 3.9, 6.5, 6.9, 9.5, 9.9];
 
   const handleDelays = useMemo(
     () =>

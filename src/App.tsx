@@ -23,8 +23,6 @@ const App: React.FC = () => {
         startIsClicked,
         okIsClicked,
         goIsClicked,
-        // timer,
-        // counter,
         isTimeOver,
         isEnd,
         setIsDay,
@@ -32,8 +30,6 @@ const App: React.FC = () => {
         setStartIsClicked,
         setOkIsClicked,
         setGoIsClicked,
-        // setTimer,
-        // setCounter,
         setIsTimeOver,
         setIsEnd,
       }}

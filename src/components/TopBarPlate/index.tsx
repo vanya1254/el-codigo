@@ -2,11 +2,6 @@ import React from "react";
 
 import styles from "./TopBarPlate.module.scss";
 
-// export enum TypePlate {
-//   TIMER = "timer",
-//   COUNTER = "counter",
-// }
-
 export type TopBarPlateType = {
   img: string;
   sencation: string;

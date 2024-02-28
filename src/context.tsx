@@ -1,5 +1,4 @@
 import React from "react";
-import { TopBarPlateType } from "./components/TopBarPlate";
 
 export interface IAppContext {
   isDay: boolean;
@@ -7,8 +6,6 @@ export interface IAppContext {
   startIsClicked: boolean;
   okIsClicked: boolean;
   goIsClicked: boolean;
-  // timer: TopBarPlateType;
-  // counter: TopBarPlateType;
   isTimeOver: boolean;
   isEnd: boolean;
   setIsDay: React.Dispatch<React.SetStateAction<boolean>>;
@@ -16,8 +13,6 @@ export interface IAppContext {
   setStartIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
   setOkIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
   setGoIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
-  // setTimer: React.Dispatch<React.SetStateAction<TopBarPlateType>>;
-  // setCounter: React.Dispatch<React.SetStateAction<TopBarPlateType>>;
   setIsTimeOver: React.Dispatch<React.SetStateAction<boolean>>;
   setIsEnd: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -28,18 +23,6 @@ const defaultState = {
   startIsClicked: false,
   okIsClicked: false,
   goIsClicked: false,
-  // timer: {
-  //   img: "",
-  //   sencation: "",
-  //   firstValue: "",
-  //   secondValue: "",
-  // },
-  // counter: {
-  //   img: "",
-  //   sencation: "",
-  //   firstValue: "",
-  //   secondValue: "",
-  // },
   isTimeOver: false,
   isEnd: false,
   setIsDay: () => {},
@@ -47,8 +30,6 @@ const defaultState = {
   setStartIsClicked: () => {},
   setOkIsClicked: () => {},
   setGoIsClicked: () => {},
-  // setTimer: () => {},
-  // setCounter: () => {},
   setIsTimeOver: () => {},
   setIsEnd: () => {},
 };

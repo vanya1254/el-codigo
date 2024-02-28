@@ -4,10 +4,6 @@ import { AppContext } from "../../context";
 
 import styles from "./Background.module.scss";
 
-// export type BackgroundProps = {
-//   isDay: boolean;
-// };
-
 export const Background: React.FC = () => {
   const { isDay, isStartEnd } = useContext(AppContext);
 
